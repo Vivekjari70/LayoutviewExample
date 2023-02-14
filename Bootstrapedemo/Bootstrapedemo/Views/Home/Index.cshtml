@@ -1,0 +1,84 @@
+﻿
+<!-- Button trigger modal -->
+<button style="margin-top:20px" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+    Create Employee
+</button>
+
+<!-- Add new Employee -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <form id="saveform" method="post">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Add New Employee</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label asp-for="Employee.Name" class="control-label"></label>
+                    <input asp-for="Employee.Name" class="form-control" />
+                    <span asp-validation-for="Employee.Name" class="text-danger"></span>
+                </div>
+                
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary btnCancle" data-dismiss="modal">Close</button>
+                <button type="btnSave" class="btn btn-primary">Save changes</button>
+            </div>
+                </form>
+        </div>  
+    </div>
+</div>
+
+<!-- Delete Employee -->
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <form id="saveform" method="post">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h1>ARE YOU SURE YOU WANT TO DELETE THIS EMPLOYEE</h1>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary btnCancle" data-dismiss="modal">Close</button>
+                    <button type="btnDelete" type="button" class="btn btn-primary">Delete</button>
+                </div>
+                </form>
+        </div>
+    </div>
+</div>
+
+<!-- Edit Employee -->
+<div class="modal fade" id="EditModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <form asp-action="Update" id="Editform" method="post">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Edit Record</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <input class="updateId" type="hidden" asp-for="Employee.Id" />
+                        <label asp-for="Employee.Name" class="control-label"></label>
+                        <input id="empname" asp-for="Employee.Name" class="form-control"/>
+                        <span asp-validation-for="Employee.Name" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary btnCancle" data-dismiss="modal">Close</button>
+                    <button type="btnSave" type="submit" class="btn btn-primary">Update changes</button>
+                </div>
+                </form>
+        </div>
+    </div>
+</div>
